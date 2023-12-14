@@ -17,7 +17,7 @@ const headers = {
   'Authorization': `token ${token}`
 };
 
-const lines = fs.readFileSync('toDelete.txt', 'utf-8').split('\n').filter(Boolean); // todelete.txt is a txt with repository names. One per line.
+const lines = fs.readFileSync('fixtures/toDelete.txt', 'utf-8').split('\n').filter(Boolean); // todelete.txt is a txt with repository names. One per line.
 lines.forEach(async (repo) => {
   try {
     const response = await axios.delete(`${url}/${repo}`, { headers });
