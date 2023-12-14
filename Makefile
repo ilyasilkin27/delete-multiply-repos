@@ -1,2 +1,5 @@
+install:
+	npm ci
+
 delete:
-	python delete_repos.py
+	node src/deleteRepos.js
