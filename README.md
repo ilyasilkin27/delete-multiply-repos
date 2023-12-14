@@ -1,5 +1,5 @@
 # Delete multiple repos at once
-(Source)[https://gist.github.com/alinefr/9cc54871d439ac96aff2]
+(Source) [https://gist.github.com/alinefr/9cc54871d439ac96aff2]
 
 ## Description
 
