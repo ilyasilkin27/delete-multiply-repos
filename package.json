@@ -2,7 +2,7 @@
   "name": "delete-multiply-repos",
   "version": "1.0.0",
   "description": "Ported Python - to - JS script to delete multiply repos with one CLI command at once.",
-  "main": "src/deleteRepos.js",
+  "main": "index.js",
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -15,6 +15,7 @@
     "fs": "^0.0.1-security"
   },
   "dependencies": {
-    "chaik": "^0.0.4"
+    "chaik": "^0.0.4",
+    "readline": "^1.3.0"
   }
 }

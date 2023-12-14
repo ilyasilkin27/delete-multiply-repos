@@ -2,4 +2,4 @@ install:
 	npm ci
 
 delete:
-	node src/deleteRepos.js
+	node index.js
