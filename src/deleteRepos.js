@@ -13,12 +13,10 @@ const validateInput = (token, name) => {
 
 const buildUrl = (name) => `https://api.github.com/repos/${name}`;
 
-const buildHeaders = (token) => {
-  return {
-    'Accept': 'application/vnd.github.v3+json',
-    'Authorization': `token ${token}`
-  };
-};
+const buildHeaders = (token) => ({
+  Accept: 'application/vnd.github.v3+json',
+  Authorization: `token ${token}`,
+});
 
 const deleteRepo = async (url, headers, repo) => {
   try {
@@ -35,7 +33,6 @@ const deleteRepo = async (url, headers, repo) => {
   }
 };
 
-
 const deleteRepos = async (token, name) => {
   try {
     validateInput(token, name);
@@ -44,9 +41,8 @@ const deleteRepos = async (token, name) => {
     const headers = buildHeaders(token);
 
     const lines = fs.readFileSync('fixtures/toDelete.txt', 'utf-8').split('\n').filter(Boolean);
-    for (const repo of lines) {
-      await deleteRepo(url, headers, repo);
-    }
+    const deletePromises = lines.map((repo) => deleteRepo(url, headers, repo));
+    await Promise.all(deletePromises);
   } catch (error) {
     console.error(chalk.red('Error:'), error.message);
   }
