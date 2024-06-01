@@ -7,7 +7,7 @@ Ported and improved Python - to - JS script to delete multiply repos with one CL
 
 ## Explanation
 
-You need to generate your [github token](https://github.com/settings/tokens), and configure it by ticking '*repo*' and '*delete_repo*' boxes.  
+You need to generate your [github token](https://github.com/settings/tokens), and configure it by ticking '*repo*' and '*delete_repo*' boxes.
 Enter repository names as follows: ```test1,test2,test3```.
 
 ## Requirements
